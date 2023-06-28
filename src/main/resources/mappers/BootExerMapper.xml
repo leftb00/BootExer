@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.leftb.bootexer.dao.BootExerDao">
+
+	<insert id="join">
+		INSERT INTO pmember(mid, mpw, mname, memail) VALUES (#{param1},#{param2},#{param3},#{param4})
+	</insert>
+	<select id="login">
+		SELECT COUNT(*) FROM pmember WHERE mid=#{param1} and mpw=#{param2}
+	</select>
+	<select id="checkId">
+		SELECT COUNT(*) FROM pmember WHERE mid=#{param1}
+	</select>
+	<select id="list" resultType="com.leftb.bootexer.dto.BoardDto">
+		SELECT * FROM pboard ORDER BY qdate DESC
+	</select>
+	<select id="content" resultType="com.leftb.bootexer.dto.BoardDto">
+		SELECT * FROM pboard WHERE qnum=#{param1}
+	</select>
+	<insert id="write">
+		INSERT INTO pboard(qnum, qid, qtitle, qcontent) VALUES (pboard_seq.nextval, #{param1}, #{param2}, #{param3})
+	</insert>
+	<update id="modify">
+		UPDATE pboard SET qtitle=#{param2}, qcontent=#{param3} WHERE qnum=#{param1}
+	</update>
+	<delete id="delete">
+		DELETE FROM pboard WHERE qnum=#{param1}
+	</delete>
+	<update id="uphit">
+		UPDATE pboard SET qhit=qhit+1 WHERE qnum=#{param1}
+	</update>
+
+</mapper>
