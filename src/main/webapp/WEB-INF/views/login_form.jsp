@@ -11,7 +11,7 @@
 </head>
 <body>
 <%@ include file="header.jsp"%>
-<div id="main">
+<article>
   <table id="main_table">
     <tr>
       <td>
@@ -31,11 +31,11 @@
               <th colspan=2>로그인</th>
             </tr>
             <tr>
-              <td class="right">아이디:</td>
+              <td class="text-right">아이디:</td>
               <td><input type="text" name="mid"/></td>
             </tr>
             <tr>
-              <td class="right">비빌번호:</td>
+              <td class="text-right">비빌번호:</td>
               <td><input type="password" name="mpw"/></td>
             </tr>
             <tr>
@@ -51,7 +51,7 @@
       </td>
     </tr>
   </table>
-</div>
+</article>
 <%@ include file="footer.jsp"%>
 </body>
 </html>

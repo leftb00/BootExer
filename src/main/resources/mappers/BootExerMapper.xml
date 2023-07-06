@@ -14,8 +14,20 @@
 	<select id="checkId">
 		SELECT COUNT(*) FROM pmember WHERE mid=#{param1}
 	</select>
+	<select id="getMember" resultType="com.leftb.bootexer.dto.MemberDto">
+		SELECT * FROM pmember WHERE mid=#{param1}
+	</select>
+	<update id="modifyMember">
+		UPDATE pmember SET mpw=#{param2}, mname=#{param3}, memail=#{param4} WHERE mid=#{param1}
+	</update>
 	<select id="list" resultType="com.leftb.bootexer.dto.BoardDto">
-		SELECT * FROM pboard ORDER BY qdate DESC
+		SELECT * FROM
+			(SELECT a.*, FLOOR(((ROWNUM-1)/#{param2})+1) page, ROWNUM rnum
+			FROM (SELECT * FROM pboard ORDER BY qnum DESC) a)
+		WHERE page=#{param1}
+	</select>
+	<select id="count">
+		SELECT count(*) FROM pboard
 	</select>
 	<select id="content" resultType="com.leftb.bootexer.dto.BoardDto">
 		SELECT * FROM pboard WHERE qnum=#{param1}

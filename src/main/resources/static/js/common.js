@@ -31,7 +31,7 @@ function changeCSS(cssID, cssFile) {
 }
 
 function joinCheck() {
-	if(document.join_form.mpw.value != document.join_form.mpw2.value) {
+	if(document.member_form.mpw.value != document.member_form.mpw2.value) {
 		alert("암호와 암호확인에 입력한 값이 같지 않습니다.");
 	} else {
 		return true;
@@ -44,6 +44,10 @@ function joinCheck() {
 window.onload = function () {
 	var color_cookie = getCookie("color");
 	var color_list = document.getElementById('color_list');
+	var color_groups = ['color1', 'color2', 'color3', 'color4'];
+	color_groups.forEach(function(color) {
+		color_list.appendChild(new Option(color, color));
+	});
 	if (color_cookie) {
 		color_list.value = color_cookie;
 		changeCSS('color_css', color_cookie);

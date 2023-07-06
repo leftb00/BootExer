@@ -3,14 +3,12 @@ package com.leftb.bootexer.dto;
 import java.sql.Timestamp;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class MemberDto {
 
 	private String mid;

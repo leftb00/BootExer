@@ -11,7 +11,7 @@
 </head>
 <body>
 <%@ include file="header.jsp"%>
-<div id="main">
+<article>
   <table id="main_table">
     <tr>
       <td>
@@ -43,7 +43,7 @@
       </td>
     </tr>
   </table>
-</div>
+</article>
 <%@ include file="footer.jsp"%>
 </body>
 </html>

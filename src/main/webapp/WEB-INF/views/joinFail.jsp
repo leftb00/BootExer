@@ -11,7 +11,7 @@
 </head>
 <body>
 <%@ include file="header.jsp"%>
-<div id="main">
+<article>
   <table id="main_table">
     <tr>
       <td>
@@ -30,7 +30,7 @@
             <th>회원 가입 실패</th>
           </tr>
           <tr>
-            <td class="center">
+            <td class="text-center">
               <span class="skilltext02">회원 가입 실패! 다시 확인해 주세요.</span><br/><br/>
               <input class="button01" type="button" value="회원가입 돌아가기" onclick="javascript:history.go(-1);">
             </td>
@@ -43,7 +43,7 @@
       </td>
     </tr>
   </table>
-</div>
+</article>
 <%@ include file="footer.jsp"%>
 </body>
 </html>

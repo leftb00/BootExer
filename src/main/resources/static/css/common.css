@@ -7,6 +7,9 @@
     clear: both;
 }
 body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 	background-color: var(--color1);
 	color: var(--color4);
 }
@@ -14,7 +17,7 @@ ul {
     list-style-type: none;
 }
 span.title01 {
-	font-size: 70px;
+	font-size: 50px;
     font-weight: bold;
 	color: var(--color2);
 }
@@ -29,23 +32,61 @@ span.skilltext01 {
 span.skilltext02 {
 	font-size: 30px;
 }
-#main {
-	display: flex;
+
+header {
+	width: 100%;
+	height: 40px;
+	position: relative;
+	top: 0;
+	background-color: var(--color3);
+	text-align: right;
+    margin-bottom: 5px;
+}
+header ul {
+    display: inline;
+}
+header li {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--color1);
+    margin: 10px;
+}
+header select {
+	margin: 5px;
+}
+header a:link {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+header a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+header a:hover {
+    text-decoration: underline;
+    color: inherit;
+}
+
+article {
+	flex-grow: 1;
 	justify-content: center;
 	align-items: center;
-	height: calc(100vh - 90px);
+	display: flex;
+	flex-direction: column;
 }
 #main_table {
-	width: 80%;
-	border: var(--color4);
-	background-color: var(--color1);
+	width: 90%;
+	vertical-align: middle;
 	text-align: center;
 	margin: 0 auto;
 	display: flex;
 	justify-content: center;
 	align-self: center;
+	/*border: 1px solid red;*/
 }
 #sub_table {
+	/*border: 1px solid red;*/
 	width: 100%;
 	background-color: var(--color2);
 	text-align: left;
@@ -58,50 +99,51 @@ span.skilltext02 {
 #sub_table td {
 	padding: 5px;
 }
-#header {
+#board_table {
+	/*border: 1px solid red;*/
 	width: 100%;
-	height: 40px;
+	text-align: center;
+	border-collapse: collapse;
+}
+#board_table tr:nth-child(odd) {
 	background-color: var(--color3);
-	text-align: right;
-    margin-bottom: 5px;
 }
-#header ul {
-    display: inline;
+#board_table tr:nth-child(even) {
+	background-color: var(--color4);
 }
-#header li {
-    display: inline-block;
-    font-size: 13px;
-    color: var(--color1);
-    margin: 10px;
+#board_table th {
+	color: var(--color1);
+	padding: 5px;
 }
-#header select {
-	margin: 5px;
+#board_table td {
+	color: var(--color1);
+	padding: 2px;
 }
-#header a:link {
-    text-decoration: none;
-    color: inherit;
-    font-weight: bold;
-}
-
-#header a:visited {
+#board_table a:link {
     text-decoration: none;
     color: inherit;
 }
-
-#header a:hover {
+#board_table a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+#board_table a:hover {
     text-decoration: underline;
     color: inherit;
 }
-
-#footer {
+#board_table .current_page {
+	background-color: var(--color1);
+	color: var(--color4);
+	padding: 2px 5px 2px 5px;
+}
+footer {
 	width: 100%;
 	height: 40px;
+    margin-top: 5px;
 	background-color: var(--color3);
 	text-align: center;
 	font-size: 12px;
     color: var(--color1);
-    margin-top: 5px;
-    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -113,9 +155,24 @@ span.skilltext02 {
 .button01:hover {
 	background-color: var(--color3);
 }
-.center {
+.text-left {
+	text-align: left;
+}
+.text-center {
 	text-align: center;
 }
-.right {
+.text-right {
 	text-align: right;
+}
+.back-color4 {
+	background-color: var(--color4);
+}
+.width-100 {
+	width: 100vh;
+}
+.width-50 {
+	width: 50vh;
+}
+.width-40 {
+	width: 40vh;
 }
