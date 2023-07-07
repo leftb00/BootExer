@@ -11,8 +11,8 @@
     <li><a href="/join_form">Join</a></li>
     </c:when>
     <c:otherwise>
-    <li><a href="/modify_member_form">${mid} profile</a></li>
     <li><a href="/logout">Logout</a></li>
+    <li><a href="/modify_member_form">Profile</a></li>
     </c:otherwise>
     </c:choose>
   </ul>

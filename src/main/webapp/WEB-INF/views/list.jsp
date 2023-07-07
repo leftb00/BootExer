@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/r/css/color1.css" id="color_css"/>
 <link rel="stylesheet" href="/r/css/common.css"/>
 <script type="text/javascript" src="/r/js/common.js"></script>
-<title>글 목록 보기</title>
+<title>게시판</title>
 </head>
 <body>
 <%@ include file="header.jsp"%>
@@ -17,7 +17,7 @@
   <table id="main_table">
     <tr>
       <td>
-        <span class="title01">게시판 글목록</span>
+        <span class="title01">게시판</span>
       </td>
     </tr>
     <tr>
@@ -47,7 +47,6 @@
 			</c:forEach>
 			<tr>
 				<td colspan=5>
-					[
 				<c:set var="start_page" value="${(page - 5) < 1 ? 1 : (page - 5)}" />
 				<c:set var="end_page" value="${(page + 5) > page_count ? page_count : (page + 5)}" />
 				<c:if test="${start_page > 1}">
@@ -66,7 +65,6 @@
 				<c:if test="${end_page < page_count}">
 					<a href="list?page=${end_page+1}">▶</a>
 				</c:if>
-					]
 					<input type="button" class="button01" value="글쓰기"
 						onclick="javascript:window.location='write_form?page=${page}'">
 				</td>

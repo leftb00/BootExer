@@ -20,7 +20,7 @@ public class BootExerController {
 
 	@Autowired
 	private SqlSession sqlSession;
-	private final int page_size = 10;
+	private final int page_size = 20;
 
 	@RequestMapping(value = {"/", "/index"})
 	public String index() {
@@ -33,7 +33,7 @@ public class BootExerController {
 	}
 
 	@RequestMapping(value = "/join")
-	public String join(HttpServletRequest request, Model model) {
+	public String join(HttpServletRequest request, HttpSession session, Model model) {
 
 		BootExerDao dao = sqlSession.getMapper(BootExerDao.class);
 		String mid = request.getParameter("mid");
@@ -42,7 +42,7 @@ public class BootExerController {
 			dao.join(mid, request.getParameter("mpw"),
 				mname, request.getParameter("memail")) == 1)
 		{
-			model.addAttribute("mid", mid);
+			session.setAttribute("mid", mid);
 			model.addAttribute("mname", mname);
 			
 			return "joinOk";

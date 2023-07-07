@@ -22,7 +22,7 @@
 	</update>
 	<select id="list" resultType="com.leftb.bootexer.dto.BoardDto">
 		SELECT * FROM
-			(SELECT a.*, FLOOR(((ROWNUM-1)/#{param2})+1) page, ROWNUM rnum
+			(SELECT a.*, FLOOR((ROWNUM-1)/#{param2}+1) page, ROWNUM rnum
 			FROM (SELECT * FROM pboard ORDER BY qnum DESC) a)
 		WHERE page=#{param1}
 	</select>
