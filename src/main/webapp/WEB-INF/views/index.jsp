@@ -40,7 +40,7 @@
             <td><span class="skilltext01">J</span><span class="skilltext02">AVA SCRIPT</span></td>
           </tr>
           <tr>
-            <td><span class="skilltext01">H</span><span class="skilltext02">TML5&CSS</span></td>
+            <td><span class="skilltext01">H</span><span class="skilltext02">TML5&amp;CSS</span></td>
           </tr>
           <tr>
             <td><span class="skilltext01">D</span><span class="skilltext02">ATABASE</span></td>
